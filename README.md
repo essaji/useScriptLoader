@@ -3,13 +3,13 @@
 ## install
 
 ```
-npm install useScriptLoader
+npm install useScriptLoader --save
 ```
 
 ## usage
 
 ```js
-const loadScript = require('load-script2')
+const useScriptLoader = require('useScriptLoader')
 
 const { isLoading } = useScriptLoader('foo.js')
 console.log(script.src);    // Prints 'foo'.js' after loading
