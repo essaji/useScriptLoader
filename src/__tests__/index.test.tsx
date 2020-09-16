@@ -3,7 +3,10 @@ import {cleanup, render} from '@testing-library/react'
 import {useScriptLoader} from "../index";
 
 describe('useScriptLoader', () => {
-  afterEach(() => cleanup())
+  beforeEach(() => {
+    cleanup()
+    document.documentElement.innerHTML = ""
+  })
 
   test('Should add script to the DOM as child of head by default', () => {
     const scriptUniqueId = 'script-id-goes-here'
