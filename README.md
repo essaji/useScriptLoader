@@ -12,7 +12,7 @@ npm install use-script-loader --save
 const useScriptLoader = require('use-script-loader')
 
 const { isLoading } = useScriptLoader('foo.js')
-console.log(script.src);    // Prints 'foo'.js' after loading
+console.log(script.src);    // Prints 'foo'.js'
 if (!isLoading) {
   // use foo.js
 }
