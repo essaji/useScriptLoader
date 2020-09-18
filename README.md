@@ -1,4 +1,5 @@
-# use-script-loader hook
+# use-script-loader hook [![Build Status](https://travis-ci.org/essaji/useScriptLoader.svg?branch=master)](https://travis-ci.org/essaji/useScriptLoader)
+
 Inspired by [scriptLoader2](https://github.com/feross/load-script2)
 ## install
 
