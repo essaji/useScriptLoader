@@ -11,7 +11,7 @@ describe('useScriptLoader', () => {
   test('Should add script to the DOM as child of head by default', () => {
     const scriptUniqueId = 'script-id-goes-here'
     const MockedComponent = () => {
-      useScriptLoader('url/to/script/here.js', { id: scriptUniqueId })
+      const [loading, script, error] = useScriptLoader('url/to/script/here.js', { id: scriptUniqueId })
       return <div>MockedComponent</div>
     }
     render(<MockedComponent />)

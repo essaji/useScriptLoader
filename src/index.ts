@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import loadScript from './scriptLoader'
 
 export function useScriptLoader (source: string, attrs?: object, node?: HTMLElement, skip?: boolean) {
-  const [ isLoading, setIsLoading ] = useState(true)
+  const [ loading, setIsLoading ] = useState(true)
+  const [error, setError] = useState({})
+  const [scriptReference, setScriptReference] = useState({})
   useEffect(() => {
     const scripts: HTMLScriptElement[] = Array.from(document.scripts)
     for(let i=0; i<scripts.length; i++) {
@@ -13,12 +15,18 @@ export function useScriptLoader (source: string, attrs?: object, node?: HTMLElem
     }
     if (!skip) {
       loadScript(source, attrs, node)
-          .then(() => setIsLoading(false))
-          .catch((e: { message: string }) => console.error(e))
+          .then(script => {
+            setIsLoading(false)
+            setScriptReference(script as HTMLScriptElement)
+          })
+          .catch((e: { message: string }) => {
+            console.error(e)
+            setError(e)
+          })
     } else {
       setIsLoading(false)
     }
   }, [])
 
-  return { isLoading }
+  return [loading, scriptReference, error]
 }
