@@ -45,9 +45,13 @@ defaults to the `<head>` tag.
 
 If `true`, will not append script. Default value is `false`
 
-#### `object: { isLoading }`
+#### `array: [loading, script, error]`
 
-Returns an object which contains `isLoading` flag that will remain `true` till the script is loaded
+Returns an array which can be destructed to `[loading, script, error]`
+
+* **loading:** Remains `true` till script is loaded
+* **script:** source url
+* **error:** error object containing message as string
 
 ## license
 
