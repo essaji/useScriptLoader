@@ -12,12 +12,12 @@ npm install use-script-loader --save
 ```js
 const useScriptLoader = require('use-script-loader')
 
-const [loading, script, error] = useScriptLoader('foo.js')
+const [loading, script, error] = useScriptLoader('https://ajax.googleapis.com/ajax/libs/jquery/x.x.x/jquery.min.js')
 if (loading) return <Spinner />
 if (error) throw error
-console.log(script.src);    // Prints 'foo'.js'
+console.log(script.src);    // Prints 'https://ajax.googleapis.com/ajax/libs/jquery/x.x.x/jquery.min.js'
 
-// use foo.js
+// use jQuery here
 ```
 
 ## API
