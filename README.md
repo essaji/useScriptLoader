@@ -50,7 +50,7 @@ If `true`, will not append script. Default value is `false`
 Returns an array which can be destructed to `[loading, script, error]`
 
 * **loading:** Remains `true` till script is loaded
-* **script:** source url
+* **script:** Reference to the element
 * **error:** error object containing message as string
 
 ## license
